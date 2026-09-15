@@ -8,7 +8,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     #Serializes a user profile object
 
     class Meta:
-        model = models.UserProfileManager
+        model = models.UserProfile
         fields = ('id', 'email', 'name', 'password')
         extra_kwargs = {
             'password': {
@@ -19,7 +19,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """Create and return a new user"""
-        user = models.UserProfileManager.objects.create_user(
+        user = models.UserProfile.objects.create_user(
             email=validated_data['email'],
             name=validated_data['name'],
             password=validated_data['password']

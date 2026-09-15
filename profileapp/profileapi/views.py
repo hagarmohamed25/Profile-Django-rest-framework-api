@@ -1,8 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, viewsets
-from profileapi import serializers
-from profileapi import models
+from profileapi import serializers, models
 
 class HelloApiView(APIView):
     #Test API View
